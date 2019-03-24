@@ -4,7 +4,6 @@ import ar.edu.itba.sia.gps.api.Rule;
 import ar.edu.itba.sia.gps.api.State;
 import ar.edu.itba.sia.gps.eightpuzzle.E8State;
 import ar.edu.itba.sia.gps.eightpuzzle.Pair;
-import ar.edu.itba.sia.gps.exception.NotAppliableException;
 
 import java.util.Optional;
 
@@ -18,7 +17,7 @@ public abstract class E8MoveRule implements Rule {
         return 1;
     }
 
-    public Optional<State> evalRule(State state, Pair destiny){
+    public Optional<State> apply(State state, Pair destiny){
         E8State e8state = (E8State) state;
         Pair[] array = e8state.getArray().clone();
         Pair blank = e8state.getBlank();
