@@ -95,4 +95,9 @@ public class E8State implements State{
         }
         return stringBuilder.append('\n').toString();
     }
+	
+	@Override
+	public String getRepresentation() {
+		return toString();
+	}
 }

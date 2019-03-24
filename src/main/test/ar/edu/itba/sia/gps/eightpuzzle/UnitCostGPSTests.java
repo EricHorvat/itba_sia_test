@@ -19,13 +19,13 @@ public class UnitCostGPSTests {
 	
 	@BeforeClass
 	public static void setUp(){
-		E8Problem problem = new E8Problem(false, E8HeuristicA.instance());
+		E8Problem problem = new E8Problem(false);
 		
-		bfsEngine = new GPSEngine(problem, SearchStrategy.BFS);
-		dfsEngine = new GPSEngine(problem, SearchStrategy.DFS);
-		iddfsEngine = new GPSEngine(problem, SearchStrategy.IDDFS);
-		aStarEngine = new GPSEngine(problem, SearchStrategy.ASTAR);
-		greedyEngine = new GPSEngine(problem, SearchStrategy.GREEDY);
+		bfsEngine = new GPSEngine(problem, SearchStrategy.BFS, null);
+		dfsEngine = new GPSEngine(problem, SearchStrategy.DFS, null);
+		iddfsEngine = new GPSEngine(problem, SearchStrategy.IDDFS, null);
+		aStarEngine = new GPSEngine(problem, SearchStrategy.ASTAR, E8HeuristicA.instance());
+		greedyEngine = new GPSEngine(problem, SearchStrategy.GREEDY, E8HeuristicA.instance());
 		
 		System.out.println("Finding bfs solution");
 		bfsEngine.findSolution();

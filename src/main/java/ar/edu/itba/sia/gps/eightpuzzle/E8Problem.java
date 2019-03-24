@@ -18,7 +18,6 @@ import java.util.List;
 public class E8Problem implements Problem {
     
     private State initState;
-    private Heuristic heuristic;
 
     public static List<Rule> rules;
     public static E8State solution;
@@ -57,17 +56,11 @@ public class E8Problem implements Problem {
     }
 
     @Override
-    public Integer getHValue(State state) {
-        return heuristic.getValue(state);
-    }
-
-    @Override
     public State getInitState() {
         return initState;
     }
     
-    public E8Problem(boolean noSolution, Heuristic heuristic){
-        this.heuristic = heuristic;
+    public E8Problem(boolean noSolution){
         if (! noSolution){
     
             Pair array[] = new Pair[8];
