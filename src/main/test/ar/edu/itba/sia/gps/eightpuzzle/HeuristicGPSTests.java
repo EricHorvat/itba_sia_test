@@ -27,9 +27,6 @@ public class HeuristicGPSTests {
 		worseHeuristicEngine.findSolution();
 		System.out.println("Heuristic engine ran, running the tests");
 		
-		System.out.println(betterHeuristicEngine.getSolutionNode().getCost());
-		System.out.println(worseHeuristicEngine.getSolutionNode().getCost());
-		
 	}
 	
 	@Test
