@@ -18,14 +18,17 @@ public class HeuristicGPSTests {
 	public static void setUp(){
 		E8Problem betterHeuristicProblem = new E8Problem(false);
 		E8Problem worseHeuristicProblem = new E8Problem(false);
-		betterHeuristicEngine = new GPSEngine(betterHeuristicProblem , SearchStrategy.ASTAR, E8HeuristicA.instance());
-		worseHeuristicEngine = new GPSEngine(worseHeuristicProblem, SearchStrategy.ASTAR, E8HeuristicB.instance());
+		betterHeuristicEngine = new GPSEngine(betterHeuristicProblem , SearchStrategy.ASTAR, E8HeuristicB.instance());
+		worseHeuristicEngine = new GPSEngine(worseHeuristicProblem, SearchStrategy.ASTAR, E8HeuristicA.instance());
 		
 		System.out.println("Finding solution for the better heuristic");
 		betterHeuristicEngine.findSolution();
 		System.out.println("Finding solution for the worse heuristic");
 		worseHeuristicEngine.findSolution();
 		System.out.println("Heuristic engine ran, running the tests");
+		
+		System.out.println(betterHeuristicEngine.getSolutionNode().getCost());
+		System.out.println(worseHeuristicEngine.getSolutionNode().getCost());
 		
 	}
 	
