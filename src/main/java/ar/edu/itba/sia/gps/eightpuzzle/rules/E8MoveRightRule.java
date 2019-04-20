@@ -1,7 +1,7 @@
 package ar.edu.itba.sia.gps.eightpuzzle.rules;
 
 import ar.edu.itba.sia.gps.eightpuzzle.E8State;
-import ar.edu.itba.sia.gps.eightpuzzle.Pair;
+import ar.edu.itba.sia.gps.Pair;
 import ar.edu.itba.sia.gps.api.State;
 
 import java.util.Optional;

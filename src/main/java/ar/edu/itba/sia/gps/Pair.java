@@ -1,4 +1,4 @@
-package ar.edu.itba.sia.gps.eightpuzzle;
+package ar.edu.itba.sia.gps;
 
 /**
  * Created by eric on 15/03/17.
@@ -46,5 +46,9 @@ public class Pair {
         int result = x;
         result = 31 * result + y;
         return result;
+    }
+
+    public static Pair sum(Pair p1, Pair p2){
+        return new Pair(p1.x+p2.x, p1.y+p2.y);
     }
 }

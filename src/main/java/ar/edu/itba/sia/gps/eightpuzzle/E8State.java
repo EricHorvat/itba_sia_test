@@ -1,5 +1,6 @@
 package ar.edu.itba.sia.gps.eightpuzzle;
 
+import ar.edu.itba.sia.gps.Pair;
 import ar.edu.itba.sia.gps.api.State;
 
 import java.util.Arrays;

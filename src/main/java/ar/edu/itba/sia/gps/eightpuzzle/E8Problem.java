@@ -1,6 +1,6 @@
 package ar.edu.itba.sia.gps.eightpuzzle;
 
-import ar.edu.itba.sia.gps.api.Heuristic;
+import ar.edu.itba.sia.gps.Pair;
 import ar.edu.itba.sia.gps.api.Problem;
 import ar.edu.itba.sia.gps.api.Rule;
 import ar.edu.itba.sia.gps.api.State;
@@ -19,8 +19,8 @@ public class E8Problem implements Problem {
     
     private State initState;
 
-    public static List<Rule> rules;
-    public static E8State solution;
+    private static List<Rule> rules;
+    /*package*/ static E8State solution;
     static{
         rules = new ArrayList<>();
         rules.add(new E8MoveDownRule());
