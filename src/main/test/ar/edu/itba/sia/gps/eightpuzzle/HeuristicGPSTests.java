@@ -8,6 +8,8 @@ import org.junit.Test;
 
 import java.text.MessageFormat;
 
+import static ar.edu.itba.sia.gps.eightpuzzle.utils.TestUtils.runEngineTiming;
+
 public class HeuristicGPSTests {
 	
 	private static GPSEngine betterHeuristicEngine;
@@ -20,11 +22,10 @@ public class HeuristicGPSTests {
 		E8Problem worseHeuristicProblem = new E8Problem(false);
 		betterHeuristicEngine = new GPSEngine(betterHeuristicProblem , SearchStrategy.ASTAR, E8HeuristicB.instance());
 		worseHeuristicEngine = new GPSEngine(worseHeuristicProblem, SearchStrategy.ASTAR, E8HeuristicA.instance());
-		
-		System.out.println("Finding solution for the better heuristic");
-		betterHeuristicEngine.findSolution();
-		System.out.println("Finding solution for the worse heuristic");
-		worseHeuristicEngine.findSolution();
+
+		System.out.println("Running Heuristic engines");
+		runEngineTiming(betterHeuristicEngine, "Better heuristic");
+		runEngineTiming(worseHeuristicEngine, "Worse heuristic");
 		System.out.println("Heuristic engine ran, running the tests");
 		
 	}

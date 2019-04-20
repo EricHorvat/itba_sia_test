@@ -9,6 +9,8 @@ import org.junit.Test;
 
 import java.text.MessageFormat;
 
+import static ar.edu.itba.sia.gps.eightpuzzle.utils.TestUtils.runEngineTiming;
+
 public class UnitCostGPSTests {
 	
 	private static GPSEngine bfsEngine;
@@ -26,17 +28,13 @@ public class UnitCostGPSTests {
 		iddfsEngine = new GPSEngine(problem, SearchStrategy.IDDFS, null);
 		aStarEngine = new GPSEngine(problem, SearchStrategy.ASTAR, E8HeuristicB.instance());
 		greedyEngine = new GPSEngine(problem, SearchStrategy.GREEDY, E8HeuristicB.instance());
-		
-		System.out.println("Finding bfs solution");
-		bfsEngine.findSolution();
-		System.out.println("Finding dfs solution");
-		dfsEngine.findSolution();
-		System.out.println("Finding iddfs solution");
-		iddfsEngine.findSolution();
-		System.out.println("Finding aStar solution");
-		aStarEngine.findSolution();
-		System.out.println("Finding greedy solution");
-		greedyEngine.findSolution();
+
+		System.out.println("Running UnitCost engines");
+		runEngineTiming(bfsEngine, "bfs");
+		runEngineTiming(dfsEngine, "dfs");
+		runEngineTiming(iddfsEngine, "iddfs");
+		runEngineTiming(aStarEngine, "aStar");
+		runEngineTiming(greedyEngine, "greedy");
 		System.out.println("All engine ran, running the tests");
 	}
 	

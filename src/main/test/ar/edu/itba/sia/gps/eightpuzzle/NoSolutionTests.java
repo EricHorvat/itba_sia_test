@@ -2,12 +2,15 @@ package ar.edu.itba.sia.gps.eightpuzzle;
 
 import ar.edu.itba.sia.gps.GPSEngine;
 import ar.edu.itba.sia.gps.SearchStrategy;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.text.MessageFormat;
 import java.util.Objects;
+
+import static ar.edu.itba.sia.gps.eightpuzzle.utils.TestUtils.runEngineTiming;
 
 public class NoSolutionTests {
 	
@@ -26,17 +29,13 @@ public class NoSolutionTests {
 		iddfsEngine = new GPSEngine(problem, SearchStrategy.IDDFS, null);
 		aStarEngine = new GPSEngine(problem, SearchStrategy.ASTAR, E8HeuristicB.instance());
 		greedyEngine = new GPSEngine(problem, SearchStrategy.GREEDY, E8HeuristicB.instance());
-		
-		System.out.println("Finding bfs solution");
-		bfsEngine.findSolution();
-		System.out.println("Finding dfs solution");
-		dfsEngine.findSolution();
-		System.out.println("Finding iddfs solution");
-		iddfsEngine.findSolution();
-		System.out.println("Finding aStar solution");
-		aStarEngine.findSolution();
-		System.out.println("Finding greedy solution");
-		greedyEngine.findSolution();
+
+		System.out.println("Running NoSolution engines");
+		runEngineTiming(bfsEngine, "bfs");
+		runEngineTiming(dfsEngine, "dfs");
+		runEngineTiming(iddfsEngine, "iddfs");
+		runEngineTiming(aStarEngine, "aStar");
+		runEngineTiming(greedyEngine, "greedy");
 		System.out.println("All engine ran, running the tests");
 	}
 	
